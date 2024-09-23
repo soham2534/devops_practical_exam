@@ -1,0 +1,19 @@
+version: '3.8'  # Updated version
+
+services:
+  server:
+    build:
+      context: ./server # Ensure this points to the backend directory
+    ports:
+      - "5000:5000"
+
+  app:
+    build:
+      context: ./app  # Ensure this points to the frontend directory
+    ports:
+      - "80:80"
+
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
